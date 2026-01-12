@@ -7,21 +7,18 @@ interface Props {
 export default function ProgressBar({progress}: Props) {
   return (
     <Bar>
-      <Fill progress={progress}>{progress * 100}%</Fill>
+      <Fill progress={progress}>
+        <Text>{progress * 100}%</Text>
+      </Fill>
     </Bar>
   );
 }
 
 const Bar = styled.View`
-  color: black;
-  font-size: 15px;
   height: 20px;
   background-color: ${({theme}) => theme.colors.border};
   border-radius: 5px;
   overflow: hidden;
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
 `;
 
 const Fill = styled.View<{progress: number}>`
@@ -31,5 +28,10 @@ const Fill = styled.View<{progress: number}>`
   height: 100%;
   width: ${({progress}) => `${progress * 100}%`};
   background-color: ${({theme}) => theme.colors.primary};
-  padding-left: 5px;
+`;
+
+const Text = styled.Text`
+  padding-left: 20px;
+  color: black;
+  font-size: 15px;
 `;

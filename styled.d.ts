@@ -9,6 +9,7 @@ declare module "styled-components/native" {
       gray: string;
       border: string;
       disabled: string;
+      primaryLight: string;
     };
   }
 }

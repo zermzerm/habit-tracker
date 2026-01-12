@@ -6,5 +6,6 @@ export const theme = {
     gray: "#9ca3af",
     border: "#e5e7eb",
     disabled: "#a1a1aa",
+    primaryLight: "#dbeafe",
   },
 };
