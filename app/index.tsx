@@ -168,6 +168,8 @@ export default function HomeScreen() {
 }
 
 const Container = styled.View`
+  width: 100%;
+  height: 100%;
   display: flex;
   gap: 12px;
   padding: 16px;
@@ -201,6 +203,7 @@ const SortButtonContainer = styled.View`
 `;
 
 const SearchInput = styled.TextInput`
+  background-color: white;
   border: 1px solid ${({theme}) => theme.colors.border};
   padding: 10px;
   border-radius: 8px;
@@ -209,7 +212,7 @@ const SearchInput = styled.TextInput`
 
 const DeleteBar = styled.View`
   position: absolute;
-  bottom: -60px;
+  bottom: 0px;
   left: 0;
   right: 0;
   padding: 12px 16px;
