@@ -110,14 +110,14 @@ const ActionButton = styled.TouchableOpacity`
   border-radius: 8px;
   align-items: center;
   border-bottom-width: 1px;
-  border-bottom-color: ${({theme}) => theme.colors.border};
-  background-color: ${({theme}) => theme.colors.background};
+  border-bottom-color: ${({theme}) => theme.border};
+  background-color: ${({theme}) => theme.background};
 `;
 
 const ActionText = styled.Text<{danger?: boolean}>`
   font-size: 16px;
   font-weight: 600;
-  color: ${({theme, danger}) => (danger ? "#ef4444" : theme.colors.primary)};
+  color: ${({theme, danger}) => (danger ? "#ef4444" : theme.primary)};
 `;
 
 const SortButtonContainer = styled.View`
@@ -128,7 +128,7 @@ const SortButtonContainer = styled.View`
 
 const SearchInput = styled.TextInput`
   background-color: white;
-  border: 1px solid ${({theme}) => theme.colors.border};
+  border: 1px solid ${({theme}) => theme.border};
   padding: 10px;
   border-radius: 8px;
   margin-top: 12px;
@@ -144,13 +144,13 @@ const DeleteBar = styled.View`
   align-items: center;
   justify-content: space-between;
   border-top-width: 1px;
-  border-top-color: ${({theme}) => theme.colors.border};
-  background-color: ${({theme}) => theme.colors.background};
+  border-top-color: ${({theme}) => theme.border};
+  background-color: ${({theme}) => theme.background};
 `;
 
 const SelectedCount = styled.Text`
   font-size: 14px;
-  color: ${({theme}) => theme.colors.text};
+  color: ${({theme}) => theme.text};
 `;
 
 const DeleteButton = styled.TouchableOpacity<{disabled: boolean}>`

@@ -16,7 +16,7 @@ export default function ProgressBar({progress}: Props) {
 
 const Bar = styled.View`
   height: 20px;
-  background-color: ${({theme}) => theme.colors.border};
+  background-color: ${({theme}) => theme.border};
   border-radius: 5px;
   overflow: hidden;
 `;
@@ -27,7 +27,7 @@ const Fill = styled.View<{progress: number}>`
   justify-content: center;
   height: 100%;
   width: ${({progress}) => `${progress * 100}%`};
-  background-color: ${({theme}) => theme.colors.primary};
+  background-color: ${({theme}) => theme.primary};
 `;
 
 const Text = styled.Text`

@@ -38,7 +38,7 @@ const Container = styled.View`
 `;
 
 const Input = styled.TextInput`
-  border: 1px solid ${({theme}) => theme.colors.border};
+  border: 1px solid ${({theme}) => theme.border};
   background-color: white;
   padding: 12px;
   border-radius: 8px;

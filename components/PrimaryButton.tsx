@@ -17,8 +17,7 @@ export default function PrimaryButton({title, onPress, size, disabled = false}: 
 
 const Button = styled.TouchableOpacity<{size?: "small" | "large"; disabled?: boolean}>`
   padding: 12px;
-  background-color: ${({theme, disabled}) =>
-    disabled ? theme.colors.disabled : theme.colors.primary};
+  background-color: ${({theme, disabled}) => (disabled ? theme.disabled : theme.primary)};
   border-radius: 8px;
   align-items: center;
   width: ${({size}) => (size === "small" ? "150px" : "100%")};

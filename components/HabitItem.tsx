@@ -28,14 +28,13 @@ const Item = styled.TouchableOpacity<{isEditMode: boolean; selected: boolean; co
   border-radius: 8px;
   background-color: ${({completed, selected, isEditMode, theme}) => {
     if (isEditMode) {
-      return selected ? theme.colors.primaryLight : theme.colors.background;
+      return selected ? theme.primaryLight : theme.background;
     }
-    return completed ? theme.colors.primary : theme.colors.background;
+    return completed ? theme.primary : theme.background;
   }};
 
   border: 1px solid
-    ${({selected, isEditMode, theme}) =>
-      isEditMode && selected ? theme.colors.primary : theme.colors.border};
+    ${({selected, isEditMode, theme}) => (isEditMode && selected ? theme.primary : theme.border)};
 `;
 
 const Checkbox = styled.View<{selected: boolean}>`
@@ -43,6 +42,6 @@ const Checkbox = styled.View<{selected: boolean}>`
   height: 18px;
   margin-right: 10px;
   border-radius: 4px;
-  border: 2px solid ${({theme}) => theme.colors.primary};
-  background-color: ${({selected, theme}) => (selected ? theme.colors.primary : "transparent")};
+  border: 2px solid ${({theme}) => theme.primary};
+  background-color: ${({selected, theme}) => (selected ? theme.primary : "transparent")};
 `;
