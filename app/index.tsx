@@ -108,6 +108,22 @@ export default function HomeScreen() {
   return (
     <Container>
       <ProgressBar progress={progress} />
+      <PrimaryButton title="습관 추가" onPress={() => router.push("/add")} />
+      <SortButtonContainer>
+        <PrimaryButton
+          title={allCompleted ? "전체 습관 해제" : "전체 습관 완료"}
+          onPress={toggleAllHabits}
+          disabled={filteredHabits.length === 0}
+          size="small"
+        />
+
+        <PrimaryButton
+          title={showCompleted ? "미완료만 보기" : "전체 보기"}
+          onPress={() => setShowCompleted((prev) => !prev)}
+          size="small"
+        />
+      </SortButtonContainer>
+
       <Header>
         {!isEditMode ? (
           <ActionButton onPress={() => setIsEditMode(true)}>
@@ -124,21 +140,6 @@ export default function HomeScreen() {
           </ActionButton>
         )}
       </Header>
-      <PrimaryButton title="습관 추가" onPress={() => router.push("/add")} />
-      <SortButtonContainer>
-        <PrimaryButton
-          title={allCompleted ? "전체 습관 해제" : "전체 습관 완료"}
-          onPress={toggleAllHabits}
-          disabled={filteredHabits.length === 0}
-          size="small"
-        />
-
-        <PrimaryButton
-          title={showCompleted ? "미완료만 보기" : "전체 보기"}
-          onPress={() => setShowCompleted((prev) => !prev)}
-          size="small"
-        />
-      </SortButtonContainer>
 
       <SearchInput placeholder="습관 검색" value={searchText} onChangeText={setSearchText} />
 
@@ -169,25 +170,27 @@ export default function HomeScreen() {
 
 const Container = styled.View`
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   display: flex;
+  justify-content: flex-end;
   gap: 12px;
   padding: 16px;
 `;
 
 const Header = styled.View`
-  height: 56px;
-  padding: 0 16px;
   flex-direction: row;
-  align-items: center;
   justify-content: flex-end;
-  border-bottom-width: 1px;
-  border-bottom-color: ${({theme}) => theme.colors.border};
-  background-color: ${({theme}) => theme.colors.background};
 `;
 
 const ActionButton = styled.TouchableOpacity`
-  padding: 8px 12px;
+  height: 48px;
+  width: 150px;
+  padding: 12px;
+  border-radius: 8px;
+  align-items: center;
+  border-bottom-width: 1px;
+  border-bottom-color: ${({theme}) => theme.colors.border};
+  background-color: ${({theme}) => theme.colors.background};
 `;
 
 const ActionText = styled.Text<{danger?: boolean}>`
@@ -212,7 +215,7 @@ const SearchInput = styled.TextInput`
 
 const DeleteBar = styled.View`
   position: absolute;
-  bottom: 0px;
+  bottom: -60px;
   left: 0;
   right: 0;
   padding: 12px 16px;

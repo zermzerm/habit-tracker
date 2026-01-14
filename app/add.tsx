@@ -39,6 +39,7 @@ const Container = styled.View`
 
 const Input = styled.TextInput`
   border: 1px solid ${({theme}) => theme.colors.border};
+  background-color: white;
   padding: 12px;
   border-radius: 8px;
   margin-bottom: 12px;

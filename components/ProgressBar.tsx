@@ -31,7 +31,7 @@ const Fill = styled.View<{progress: number}>`
 `;
 
 const Text = styled.Text`
-  padding-left: 20px;
+  padding-left: 5px;
   color: black;
   font-size: 15px;
 `;
