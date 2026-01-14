@@ -5,10 +5,9 @@ import {ThemeProvider} from "styled-components/native";
 export default function RootLayout() {
   return (
     <ThemeProvider theme={theme}>
-      <Stack>
-        <Stack.Screen name="index" options={{title: "습관 목록"}} />
-        <Stack.Screen name="add" options={{title: "습관 추가"}} />
-        <Stack.Screen name="settings" options={{title: "설정"}} />
+      <Stack screenOptions={{headerShown: false}}>
+        <Stack.Screen name="(tabs)" />
+        <Stack.Screen name="add" options={{title: "습관 추가", headerShown: true}} />
       </Stack>
     </ThemeProvider>
   );
